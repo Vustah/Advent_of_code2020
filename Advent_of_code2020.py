@@ -15,7 +15,7 @@ def readLink(url_link):
     return myfile
 
     
+
 if __name__ == "__main__":
-    print(readLink("https://adventofcode.com/2020/day/5/input"))
     
     

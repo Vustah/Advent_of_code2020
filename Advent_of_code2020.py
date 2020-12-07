@@ -1,4 +1,3 @@
-import urllib.request as url
 
 def importFile(filename):
     infile = open(filename, 'r')
@@ -8,14 +7,9 @@ def importFile(filename):
     return contents
 
 
-def readLink(url_link):
-    req = url.Request(url_link)
-    f = url.urlopen(req)
-    myfile = f.read()
-    return myfile
 
     
 
 if __name__ == "__main__":
-    
+    pass
     

@@ -14,16 +14,18 @@ def lookIntoBags(bagList, bagSpecs):
 def solveDay7():
     bagSpecs = aoc.importFile("07122020.txt")
 
-    bagList = [["shiny gold"]]
+    bagList = ["shiny gold"]
 
-    count = 0
+
     for i in range(10):
-        next_bag_list = lookIntoBags(bagList[-1],bagSpecs)
-        
-        bagList.append(next_bag_list)
-        count += len(next_bag_list)
+        next_bag_list = lookIntoBags(bagList,bagSpecs)
+        for bag in next_bag_list:
+            if not bag in bagList:
+                bagList.append(bag)
+    
+    bagList.pop(bagList.index("shiny gold"))
+    print(len(bagList))
 
-    print(count)
 
 if __name__ == "__main__":
     solveDay7()

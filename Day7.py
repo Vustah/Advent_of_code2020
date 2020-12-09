@@ -26,6 +26,7 @@ def solveDay7():
     bagList.pop(bagList.index("shiny gold"))
     print(len(bagList))
 
+    
 
 if __name__ == "__main__":
     solveDay7()

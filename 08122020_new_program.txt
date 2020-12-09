@@ -251,7 +251,7 @@ nop -202
 nop -177
 acc -17
 acc +30
-jmp -128
+nop -128 #Changed from jmp -128
 jmp +227
 nop +84
 acc +21

@@ -1,7 +1,7 @@
-from Advent_of_code2020 import importFile
+import Advent_of_code2020 as aoc
 
 def solveDay5():
-    contents = importFile("05122020.txt")
+    contents = aoc.importFile("05122020.txt")
     num_rows = 127
     num_seats = 7
     seat_ID_max = 0

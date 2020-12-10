@@ -1,8 +1,7 @@
 import Advent_of_code2020 as aoc 
 
-def solveDay9():
+def solve1(preamble_scale = 25):
     numbers = aoc.importFile("09122020.txt")
-    preamble_scale = 5
 
     number_length = len(numbers)
     for i in range(preamble_scale, number_length):
@@ -26,14 +25,33 @@ def solveDay9():
         
         if not numbers_OK:
             print(current_number)
-            print(number_range)
-            maximum = max(number_range)
-            minimum = min(number_range)
-            print(minimum, maximum, minimum+maximum)
             break
-            
-                
+    return current_number, numbers
+
+def checkNumber(current_number,sub_numbers):
+    count = 0
+    for jdx, num in enumerate(sub_numbers):
+        count += int(num)
+        if count == current_number:
+            return jdx
+        elif count > current_number:
+            return 0
+
+def solve2(preamble_scale = 25):
+    current_number, numbers = solve1(preamble_scale)
+    number_length = len(numbers)
+    for idx in range(number_length):
+        jdx = int(checkNumber(current_number,numbers[idx:]))
+        if jdx > 0:
+            break
+    start = idx
+    stop = jdx+idx
+    subset_numbers = numbers[start:stop]
+    maximum = int(max(subset_numbers))
+    minimum = int(min(subset_numbers))
+    return minimum, maximum, minimum+maximum
 
 
 if __name__ == "__main__":
-    solveDay9()
+    solve1()
+    solve2()

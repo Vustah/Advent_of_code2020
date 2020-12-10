@@ -1,3 +1,6 @@
+import Day9
+import Day10
+
 
 def importFile(filename):
     infile = open(filename, 'r')
@@ -11,5 +14,5 @@ def importFile(filename):
     
 
 if __name__ == "__main__":
-    pass
-    
+    Day9.solve1()
+    print(Day9.solve2())

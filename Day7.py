@@ -11,11 +11,26 @@ def lookIntoBags(bagList, bagSpecs):
 
     return next_level_baglist
 
+def findBagsInside(bag_string):
+    open_bag = bag_string.index("contain")
+    bags_inside = open_bag.split(", ")
+    bags_inside_list = []
+    for bags in bags_inside:
+        number, character, color = bags.split(" ")[:-1]
+        bags_inside_list.append([number, character + " "+ color])
+    return bags_inside_list
+
+def look_into_bags_reqursive(baglist,bags_inside):
+    
+
+    return 0
+
 def solveDay7():
-    bagSpecs = aoc.importFile("07122020.txt")
+    bagSpecs = aoc.importFile("07122020_test.txt")
 
     bagList = ["shiny gold"]
 
+    bags_inside = [] 
 
     for i in range(10):
         next_bag_list = lookIntoBags(bagList,bagSpecs)
